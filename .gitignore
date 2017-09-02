@@ -1,0 +1,12 @@
+.DS_Store
+spec/resources/_*.png
+/pkg
+/tmp
+/doc
+/.yardoc
+/_site
+node_modules
+.idea/
+out
+TWU_PROGRAMMING_EXERCISES.iml
+
