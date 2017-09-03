@@ -7,23 +7,39 @@ public class PrintUtil {
     }
 
     private PrintUtil printHorizontalLineAsterisk(int n) {
-        for (int i = 0; i <= n; i++) {
+        for (int i = 0; i < n; i++) {
             System.out.print("*");
         }
         return this;
     }
 
     private PrintUtil printVerticalLineAsterisk(int n) {
-        for (int i = 0; i <= n; i++) {
+        for (int i = 0; i < n; i++) {
             System.out.println("*");
         }
         return this;
     }
 
+    private PrintUtil printRightTriangleAsterisk(int n) {
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j <= i; j++) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+        return this;
+    }
+
+    private PrintUtil printDelimiter() {
+        System.out.println("\n" + "===================");
+        return this;
+    }
+
     public static void main(String args[]) {
         PrintUtil printUtil = new PrintUtil()
-                .printOneAsterisk()
-                .printHorizontalLineAsterisk(8)
-                .printVerticalLineAsterisk(3);
+                .printOneAsterisk().printDelimiter()
+                .printHorizontalLineAsterisk(8).printDelimiter()
+                .printVerticalLineAsterisk(3).printDelimiter()
+                .printRightTriangleAsterisk(4).printDelimiter();
     }
 }
