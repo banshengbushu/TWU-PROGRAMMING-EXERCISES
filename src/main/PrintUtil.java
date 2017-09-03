@@ -30,10 +30,10 @@ public class PrintUtil {
         return this;
     }
 
-    private PrintUtil printTriangleAsterisk(int n,boolean isExistBlankFirstLine) {
+    private PrintUtil printTriangleAsterisk(int n, boolean isExistBlankFirstLine) {
         int flag = isExistBlankFirstLine ? 0 : 1;
 
-        for (int i = 0; i < n-flag; i++) {
+        for (int i = 0; i < n - flag; i++) {
             for (int j = n - 1; j > i; j--) {
                 System.out.print(" ");
             }
@@ -61,17 +61,35 @@ public class PrintUtil {
     }
 
     private PrintUtil printDiamondAsterisk(int n) {
-        printTriangleAsterisk(n,true).printRevereAsterisk(n, false);
+        printTriangleAsterisk(n, true).printRevereAsterisk(n, false);
         return this;
     }
 
     private PrintUtil printDiamondWithName(int n) {
-        printTriangleAsterisk(n,false);
+        printTriangleAsterisk(n, false);
         System.out.println("Bill");
         printRevereAsterisk(n, false);
         return this;
     }
 
+    private PrintUtil printBuzzExercise() {
+        for (int i = 1; i < 100; i++) {
+            if (i % 3 == 0 && i % 5 == 0) {
+                System.out.println("FizzBuzz");
+                continue;
+            }
+            if (i % 3 == 0) {
+                System.out.println("Fizz");
+                continue;
+            }
+            if (i % 5 == 0) {
+                System.out.println("Buzz");
+                continue;
+            }
+            System.out.println(i);
+        }
+        return this;
+    }
 
     private PrintUtil printDelimiter() {
         System.out.println("\n" + "===================");
@@ -85,7 +103,7 @@ public class PrintUtil {
                 .printVerticalLineAsterisk(3).printDelimiter()
                 .printRightTriangleAsterisk(4).printDelimiter()
                 .printDiamondAsterisk(7).printDelimiter()
-                .printDiamondWithName(4).printDelimiter();
-
+                .printDiamondWithName(4).printDelimiter()
+                .printBuzzExercise().printDelimiter();
     }
 }
