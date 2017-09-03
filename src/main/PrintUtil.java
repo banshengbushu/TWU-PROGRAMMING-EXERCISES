@@ -1,20 +1,29 @@
 package main;
 
 public class PrintUtil {
-
-    private void printOneAsterisk() {
+    private PrintUtil printOneAsterisk() {
         System.out.println("*");
+        return this;
     }
 
-    private void printLineAsterisk(int n) {
+    private PrintUtil printHorizontalLineAsterisk(int n) {
         for (int i = 0; i <= n; i++) {
-                System.out.printf("*");
+            System.out.print("*");
         }
+        return this;
+    }
+
+    private PrintUtil printVerticalLineAsterisk(int n) {
+        for (int i = 0; i <= n; i++) {
+            System.out.println("*");
+        }
+        return this;
     }
 
     public static void main(String args[]) {
-        PrintUtil printUtil = new PrintUtil();
-        printUtil.printOneAsterisk();
-        printUtil.printLineAsterisk(8);
+        PrintUtil printUtil = new PrintUtil()
+                .printOneAsterisk()
+                .printHorizontalLineAsterisk(8)
+                .printVerticalLineAsterisk(3);
     }
 }
